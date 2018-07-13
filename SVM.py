@@ -1,9 +1,6 @@
 
 # coding: utf-8
 
-# In[1]:
-
-
 # Author: Chao Long and Guorui Yang 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,9 +16,6 @@ print(len(images_testing))
 print(len(images_training))
 
 
-# In[2]:
-
-
 from sklearn.svm import SVC
 import sklearn 
 from sklearn.multiclass import OneVsRestClassifier
@@ -30,9 +24,6 @@ from pylab import *
 # !pip install statsmodels --user 
 # import statsmodels.api as sm # recommended import according to the docs
 import matplotlib.pyplot as plt
-
-
-# In[6]:
 
 
 training_X = np.matrix(images_training[:10000]).T 
@@ -80,15 +71,9 @@ testing_Y = np.matrix(labels_testing)
 #     
 #     
 
-# In[7]:
-
-
 # prepossing the image data between -1 to 1 
 training_X = training_X/127.5-1
 testing_X = testing_X/127.5-1
-
-
-# In[8]:
 
 
 # data prepossing Assigning the points with label 0 to +1 and the other points within label 1 to 9 to class -1
@@ -98,9 +83,6 @@ def Predata(digit,training_Y,testing_Y):
     training_Y = (training_Y == digit).astype(np.int)
     training_Y[training_Y==0] = -1 
     return training_Y,testing_Y
-
-
-# In[18]:
 
 
 ticklabel=0
